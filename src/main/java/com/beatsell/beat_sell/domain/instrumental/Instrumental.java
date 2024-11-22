@@ -1,4 +1,4 @@
-package com.beatsell.beat_sell.instrumental;
+package com.beatsell.beat_sell.domain.instrumental;
 
 import com.beatsell.beat_sell.domain.produtor.Produtor;
 import jakarta.persistence.*;

@@ -1,4 +1,4 @@
-package com.beatsell.beat_sell.artista;
+package com.beatsell.beat_sell.domain.artista;
 
 
 import jakarta.persistence.Entity;
