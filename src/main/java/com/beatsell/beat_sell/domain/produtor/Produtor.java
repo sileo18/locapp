@@ -24,5 +24,7 @@ public class Produtor {
     private UUID id;
     private String name;
     private String sobre;
+    private String imgUrl;
+
 
 }
