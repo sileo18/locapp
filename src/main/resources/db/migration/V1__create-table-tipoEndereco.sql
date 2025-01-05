@@ -1,0 +1,6 @@
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+
+CREATE TABLE TipoEndereco(
+    Id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    Descricao VARCHAR(50) UNIQUE NOT NULL
+);
