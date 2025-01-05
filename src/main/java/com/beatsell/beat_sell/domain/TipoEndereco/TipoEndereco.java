@@ -1,7 +1,7 @@
-package com.beatsell.beat_sell.domain.produtor;
+package com.beatsell.beat_sell.domain.TipoEndereco;
 
+import jakarta.persistence.*;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -11,20 +11,18 @@ import lombok.Setter;
 
 import java.util.UUID;
 
-@Table(name = "Produtor")
+@Table(name = "TipoEndereco")
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Produtor {
+
+public class TipoEndereco {
 
     @Id
     @GeneratedValue
     private UUID id;
-    private String name;
-    private String sobre;
-    private String imgUrl;
-
-
+    @Column(name = "Descricao", nullable = false, unique = true, length = 50)
+    private String descricao;
 }

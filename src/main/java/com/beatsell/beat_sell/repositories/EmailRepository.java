@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface Instrumental extends JpaRepository<Instrumental, UUID> {
+public interface EmailRepository extends JpaRepository<EmailRepository, UUID> {
 }
