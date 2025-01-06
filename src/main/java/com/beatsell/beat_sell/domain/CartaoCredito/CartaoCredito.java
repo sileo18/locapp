@@ -23,7 +23,7 @@ public class CartaoCredito {
     @GeneratedValue
     private UUID id;
 
-    @Column(name = "Numero", nullable = false, unique = true, length = 16)
+    @Column(name = "Numero", nullable = false, length = 16)
     private String numero;
 
     @Column(name = "CVV", nullable = false, length = 3)

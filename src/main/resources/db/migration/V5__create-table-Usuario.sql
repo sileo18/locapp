@@ -1,0 +1,12 @@
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+
+CREATE TABLE Usuario(
+
+    Id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    CPF CHAR(14) UNIQUE NOT NULL,
+    CNH CHAR(15) UNIQUE NOT NULL,
+    EnderecoId UUID,
+    FOREIGN KEY (EnderecoId) REFERENCES Endereco(Id)
+
+)

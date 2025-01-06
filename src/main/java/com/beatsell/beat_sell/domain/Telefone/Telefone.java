@@ -25,7 +25,10 @@ public class Telefone {
     @Column(name = "Numero", nullable = false, unique = true, length = 9)
     private String numero;
 
-    @Column(name = "Tipo", length = 10)
+    @Column(name = "DDD", nullable = false)
+    private String DDD;
+
+    @Column(name = "Tipo", length = 20)
     private String tipo;
 
     @ManyToOne
