@@ -11,7 +11,7 @@ import lombok.Setter;
 
 import java.util.UUID;
 
-@Table(name = "TipoEndereco")
+@Table(name = "tipoendereco")
 @Entity
 @Getter
 @Setter
@@ -25,4 +25,8 @@ public class TipoEndereco {
     private UUID id;
     @Column(name = "Descricao", nullable = false, unique = true, length = 50)
     private String descricao;
+
+    public void setDescricao(String Descricao) {
+        this.descricao = Descricao;
+    }
 }

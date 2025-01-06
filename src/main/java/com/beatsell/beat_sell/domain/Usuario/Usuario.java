@@ -3,9 +3,10 @@ package com.beatsell.beat_sell.domain.Usuario;
 import com.beatsell.beat_sell.domain.Endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Getter;
 import lombok.Setter;
+
 
 import java.util.UUID;
 
@@ -32,6 +33,22 @@ public class Usuario {
     private String cnh;
 
     @ManyToOne
-    @JoinColumn(name = "Endereco_Id")
+    @JoinColumn(name = "EnderecoId")
     private Endereco endereco;
+
+    public void setNome(String nome) {
+        nome = this.nome;
+    }
+
+    public void setCpf(String cpf) {
+        cpf = this.cpf;
+    }
+
+    public void setCnh(String cnh) {
+        cnh = this.cnh;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        endereco = this.endereco;
+    }
 }
