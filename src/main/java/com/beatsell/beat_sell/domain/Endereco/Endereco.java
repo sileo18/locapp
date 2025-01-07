@@ -39,4 +39,28 @@ public class Endereco {
     @ManyToOne
     @JoinColumn(name = "Tipo_Id")
     private TipoEndereco tipo;
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public void setUf(String uf) {
+        this.uf = uf;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
+
+    public void setTipo(TipoEndereco tipo) {
+        this.tipo = tipo;
+    }
 }

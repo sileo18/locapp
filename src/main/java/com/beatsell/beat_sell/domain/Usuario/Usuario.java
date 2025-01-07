@@ -10,7 +10,7 @@ import lombok.Setter;
 
 import java.util.UUID;
 
-@Table(name = "Usuario")
+@Table(name = "usuario")
 @Entity
 @Getter
 @Setter
@@ -33,22 +33,22 @@ public class Usuario {
     private String cnh;
 
     @ManyToOne
-    @JoinColumn(name = "EnderecoId")
+    @JoinColumn(name = "enderecoid")
     private Endereco endereco;
 
     public void setNome(String nome) {
-        nome = this.nome;
+        this.nome = nome ;
     }
 
     public void setCpf(String cpf) {
-        cpf = this.cpf;
+        this.cpf = cpf ;
     }
 
     public void setCnh(String cnh) {
-        cnh = this.cnh;
+        this.cnh = cnh;
     }
 
     public void setEndereco(Endereco endereco) {
-        endereco = this.endereco;
+        this.endereco = endereco;
     }
 }

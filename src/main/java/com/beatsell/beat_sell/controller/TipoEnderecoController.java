@@ -19,7 +19,9 @@ public class TipoEnderecoController {
 
     @PostMapping
     public ResponseEntity<TipoEndereco> create(@RequestBody TipoEnderecoDTO body) {
-        TipoEndereco newTipoEndereco = this.tipoEnderecoService.createTipoEndereco(body);
+
+        TipoEndereco newTipoEndereco = tipoEnderecoService.createTipoEndereco(body);
+
         return ResponseEntity.ok(newTipoEndereco);
     }
 }
