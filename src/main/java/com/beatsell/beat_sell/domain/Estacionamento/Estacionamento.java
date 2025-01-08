@@ -21,12 +21,15 @@ public class Estacionamento {
     @Id
     @GeneratedValue
     private UUID id;
+
+    @Column(name = "nome", nullable = false, length = 100)
+    private String nome;
     @ManyToOne
-    @JoinColumn(name = "Locadora_Id")
+    @JoinColumn(name = "locadoraid")
     private Locadora locadora;
 
     @ManyToOne
-    @JoinColumn(name = "Endereco_Id")
+    @JoinColumn(name = "enderecoid")
     private Endereco endereco;
 
 
