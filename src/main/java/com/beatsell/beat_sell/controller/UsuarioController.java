@@ -3,6 +3,7 @@ package com.beatsell.beat_sell.controller;
 import com.beatsell.beat_sell.domain.Usuario.Usuario;
 import com.beatsell.beat_sell.domain.Usuario.UsuarioRequestDTO;
 import com.beatsell.beat_sell.service.UsuarioService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @PostMapping
-    public ResponseEntity<Usuario> create(@RequestBody UsuarioRequestDTO body) {
+    public ResponseEntity<Usuario> create(@Valid @RequestBody UsuarioRequestDTO body) {
         Usuario novoUsuario = usuarioService.createUsuario(body);
         return ResponseEntity.ok(novoUsuario);
     }

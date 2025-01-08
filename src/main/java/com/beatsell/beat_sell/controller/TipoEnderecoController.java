@@ -3,6 +3,7 @@ package com.beatsell.beat_sell.controller;
 import com.beatsell.beat_sell.domain.TipoEndereco.TipoEndereco;
 import com.beatsell.beat_sell.domain.TipoEndereco.TipoEnderecoDTO;
 import com.beatsell.beat_sell.service.TipoEnderecoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ public class TipoEnderecoController {
     private TipoEnderecoService tipoEnderecoService;
 
     @PostMapping
-    public ResponseEntity<TipoEndereco> create(@RequestBody TipoEnderecoDTO body) {
+    public ResponseEntity<TipoEndereco> create(@Valid @RequestBody TipoEnderecoDTO body) {
 
         TipoEndereco newTipoEndereco = tipoEnderecoService.createTipoEndereco(body);
 
