@@ -22,13 +22,25 @@ public class Locadora {
     @GeneratedValue
     private UUID id;
 
-    @Column(name = "NomeFantasia", nullable = false, length = 100)
-    private String nomeFantasia;
+    @Column(name = "nomefantasia", nullable = false, length = 100)
+    private String nomefantasia;
 
-    @Column(name = "CNPJ", nullable = false, length = 14)
+    @Column(name = "cnpj", nullable = false, length = 14)
     private String cnpj;
 
+    public void setNomeFantasia(String nomefantasia) {
+        this.nomefantasia = nomefantasia;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
     @ManyToOne
-    @JoinColumn(name = "Endereco_Id")
+    @JoinColumn(name = "enderecoid")
     private Endereco endereco;
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
 }
