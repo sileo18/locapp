@@ -9,7 +9,7 @@ public record VeiculoDTO(@NotNull @Size (max = 20)  String marca,
                          @NotNull @Size (max = 7, message = "Placa deve conter 7 dígitos") String placa,
                          String cor,
                          @NotNull Integer tarifa,
-                         @NotNull boolean disponibilidade, //Pensar em trocar para default false
+                         boolean disponibilidade,
                          Estacionamento estacionamento
 ) {
 }

@@ -1,0 +1,2 @@
+ALTER TABLE veiculo
+ALTER COLUMN disponibilidade DROP NOT NULL;

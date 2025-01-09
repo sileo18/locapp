@@ -38,11 +38,13 @@ public class Veiculo {
     @Column(name = "Tarifa", nullable = false)
     private Integer tarifa;
 
-    @Column(name = "Disponibilidade", nullable = false)
+    @Column(name = "Disponibilidade")
     private Boolean disponibilidade;
 
     @ManyToOne
     @JoinColumn(name = "Estacionamento_Id")
     private Estacionamento estacionamento;
+
+
 
 }
