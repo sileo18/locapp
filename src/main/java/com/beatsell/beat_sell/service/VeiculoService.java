@@ -15,6 +15,8 @@ public class VeiculoService {
     public Veiculo create(VeiculoDTO data) {
 
         Veiculo novoVeiculo = new Veiculo();
+        novoVeiculo.setCor(data.cor());
+        novoVeiculo.setMarca(data.marca());
 
         return novoVeiculo;
     }

@@ -45,6 +45,27 @@ public class Veiculo {
     @JoinColumn(name = "Estacionamento_Id")
     private Estacionamento estacionamento;
 
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
 
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
 
+    public void setAnoFabricacao(Integer anoFabricacao) {
+        this.anoFabricacao = anoFabricacao;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public void setTarifa(Integer tarifa) {
+        this.tarifa = tarifa;
+    }
 }
