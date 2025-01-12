@@ -6,10 +6,9 @@ import com.beatsell.beat_sell.service.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/usuarios")
@@ -22,5 +21,11 @@ public class UsuarioController {
     public ResponseEntity<Usuario> create(@Valid @RequestBody UsuarioRequestDTO body) {
         Usuario novoUsuario = usuarioService.createUsuario(body);
         return ResponseEntity.ok(novoUsuario);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Usuario>> get() {
+        List<Usuario> allUsuario = usuarioService.getAllUsuario();
+        return  ResponseEntity.ok(allUsuario);
     }
 }

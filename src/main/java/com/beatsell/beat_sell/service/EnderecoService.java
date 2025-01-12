@@ -8,6 +8,7 @@ import com.beatsell.beat_sell.repositories.TipoEnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -38,4 +39,13 @@ public class EnderecoService {
         return enderecoRepository.save(newEndereco);
 
     }
+
+    public List<Endereco> getAllEndereco() {
+
+        List<Endereco> endereco = enderecoRepository.findAll();
+
+        return endereco;
+    }
+
+
 }

@@ -6,10 +6,9 @@ import com.beatsell.beat_sell.service.EnderecoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/endereco")
@@ -22,5 +21,12 @@ public class EnderecoController {
     public ResponseEntity<Endereco> create(@Valid @RequestBody  EnderecoDTO body) {
         Endereco novoEndereco = enderecoService.createEndereco(body);
         return  ResponseEntity.ok(novoEndereco);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Endereco>> get() {
+        List<Endereco> allEndereco = enderecoService.getAllEndereco();
+
+        return ResponseEntity.ok(allEndereco);
     }
 }

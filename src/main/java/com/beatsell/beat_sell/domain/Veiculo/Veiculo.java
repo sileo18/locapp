@@ -42,8 +42,8 @@ public class Veiculo {
     private Boolean disponibilidade;
 
     @ManyToOne
-    @JoinColumn(name = "Estacionamento_Id")
-    private Estacionamento estacionamento;
+    @JoinColumn(name = "estacionamentoid")
+    private Estacionamento estacionamentoid;
 
     public void setMarca(String marca) {
         this.marca = marca;
@@ -67,5 +67,9 @@ public class Veiculo {
 
     public void setTarifa(Integer tarifa) {
         this.tarifa = tarifa;
+    }
+
+    public void setEstacionamento(Estacionamento estacionamentoid) {
+        this.estacionamentoid = estacionamentoid;
     }
 }

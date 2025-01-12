@@ -6,6 +6,8 @@ import com.beatsell.beat_sell.repositories.TipoEnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TipoEnderecoService {
 
@@ -25,5 +27,13 @@ public class TipoEnderecoService {
         repository.save(newtipoEndereco);
 
         return newtipoEndereco;
+    }
+
+    public List<TipoEndereco> getAllTipoEndereco() {
+
+        List<TipoEndereco> allTipoEndereco = repository.findAll();
+
+        return  allTipoEndereco;
+
     }
 }

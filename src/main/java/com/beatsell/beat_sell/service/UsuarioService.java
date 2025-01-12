@@ -8,6 +8,8 @@ import com.beatsell.beat_sell.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UsuarioService {
 
@@ -32,5 +34,12 @@ public class UsuarioService {
 
         return novoUsuario;
 
+    }
+
+    public List<Usuario> getAllUsuario() {
+
+        List<Usuario> allUsuario = repository.findAll();
+
+        return allUsuario;
     }
 }

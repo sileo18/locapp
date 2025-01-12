@@ -7,6 +7,8 @@ import com.beatsell.beat_sell.repositories.LocadoraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class LocadoraService {
 
@@ -30,6 +32,14 @@ public class LocadoraService {
         repository.save(novaLocadora);
 
         return  novaLocadora;
+    }
+
+    public List<Locadora> getAllLocadora() {
+
+        List<Locadora> allLocadora = repository.findAll();
+
+        return allLocadora;
+
     }
 
 
