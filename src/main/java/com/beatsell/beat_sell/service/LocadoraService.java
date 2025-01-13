@@ -4,6 +4,7 @@ import com.beatsell.beat_sell.domain.Endereco.Endereco;
 import com.beatsell.beat_sell.domain.Locadora.Locadora;
 import com.beatsell.beat_sell.domain.Locadora.LocadoraDTO;
 import com.beatsell.beat_sell.repositories.LocadoraRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,7 @@ public class LocadoraService {
     private EnderecoService enderecoService;
 
 
+    @Transactional
     public Locadora create(LocadoraDTO data) {
 
         Locadora novaLocadora = new Locadora();

@@ -5,6 +5,7 @@ import com.beatsell.beat_sell.domain.Endereco.EnderecoDTO;
 import com.beatsell.beat_sell.domain.TipoEndereco.TipoEndereco;
 import com.beatsell.beat_sell.repositories.EnderecoRepository;
 import com.beatsell.beat_sell.repositories.TipoEnderecoRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,7 @@ public class EnderecoService {
     @Autowired
     private TipoEnderecoRepository tipoEnderecoRepository;
 
+    @Transactional
     public Endereco createEndereco(EnderecoDTO data) {
 
         Optional<TipoEndereco> tipoEndereco = tipoEnderecoRepository.findById(UUID.fromString(data.tipoId()));

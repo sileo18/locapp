@@ -9,6 +9,7 @@ import com.beatsell.beat_sell.domain.TipoEndereco.TipoEndereco;
 import com.beatsell.beat_sell.repositories.EnderecoRepository;
 import com.beatsell.beat_sell.repositories.EstacionamentoRepository;
 import com.beatsell.beat_sell.repositories.LocadoraRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +29,7 @@ public class EstacionamentoService {
     @Autowired
     LocadoraRepository locadoraRepository;
 
+    @Transactional
     public Estacionamento create(EstacionamentoDTO data) {
 
         Estacionamento novoEstacionamento = new Estacionamento();

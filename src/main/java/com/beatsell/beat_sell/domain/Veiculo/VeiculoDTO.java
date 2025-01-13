@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Size;
 
 public record VeiculoDTO(@NotNull @Size (max = 20)  String marca,
                          @NotNull @Size (max = 100)  String modelo,
-                         Integer anoDeFabricacao,
+                         Integer anofabricacao,
                          @NotNull @Size (max = 7, message = "Placa deve conter 7 dígitos") String placa,
                          String cor,
                          @NotNull Integer tarifa,

@@ -5,6 +5,7 @@ import com.beatsell.beat_sell.domain.Endereco.Endereco;
 import com.beatsell.beat_sell.domain.Usuario.Usuario;
 import com.beatsell.beat_sell.domain.Usuario.UsuarioRequestDTO;
 import com.beatsell.beat_sell.repositories.UsuarioRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,7 @@ public class UsuarioService {
     @Autowired
     private EnderecoService enderecoService;
 
+    @Transactional
     public Usuario createUsuario(UsuarioRequestDTO data) {
 
         Usuario novoUsuario = new Usuario();

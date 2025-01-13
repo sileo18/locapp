@@ -26,8 +26,8 @@ public class Veiculo {
     @Column(name = "Modelo", nullable = false, length = 100)
     private String modelo;
 
-    @Column(name = "AnoFabricacao")
-    private Integer anoFabricacao; // Usando Integer para armazenar o ano
+    @Column(name = "anofabricacao")
+    private Integer anofabricacao; // Usando Integer para armazenar o ano
 
     @Column(name = "Placa", length = 7)
     private String placa;
@@ -42,8 +42,8 @@ public class Veiculo {
     private Boolean disponibilidade;
 
     @ManyToOne
-    @JoinColumn(name = "estacionamentoid")
-    private Estacionamento estacionamentoid;
+    @JoinColumn(name = "estacionamento_id")
+    private Estacionamento estacionamento_id;
 
     public void setMarca(String marca) {
         this.marca = marca;
@@ -53,8 +53,8 @@ public class Veiculo {
         this.modelo = modelo;
     }
 
-    public void setAnoFabricacao(Integer anoFabricacao) {
-        this.anoFabricacao = anoFabricacao;
+    public void setAnoFabricacao(Integer anofabricacao) {
+        this.anofabricacao = anofabricacao;
     }
 
     public void setPlaca(String placa) {
@@ -70,6 +70,6 @@ public class Veiculo {
     }
 
     public void setEstacionamento(Estacionamento estacionamentoid) {
-        this.estacionamentoid = estacionamentoid;
+        this.estacionamento_id = estacionamentoid;
     }
 }
