@@ -26,11 +26,21 @@ public class Estacionamento {
     private String nome;
     @ManyToOne
     @JoinColumn(name = "locadoraid")
-    private Locadora locadora;
+    private Locadora locadoraid;
 
     @ManyToOne
     @JoinColumn(name = "enderecoid")
-    private Endereco endereco;
+    private Endereco enderecoid;
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
+    public void setLocadoraid(Locadora locadoraid) {
+        this.locadoraid = locadoraid;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.enderecoid = endereco;
+    }
 }

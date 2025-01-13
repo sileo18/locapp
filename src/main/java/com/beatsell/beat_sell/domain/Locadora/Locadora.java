@@ -38,9 +38,9 @@ public class Locadora {
 
     @ManyToOne
     @JoinColumn(name = "enderecoid")
-    private Endereco endereco;
+    private Endereco enderecoid;
 
     public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
+        this.enderecoid = endereco;
     }
 }

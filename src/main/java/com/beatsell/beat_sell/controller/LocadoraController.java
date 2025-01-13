@@ -26,7 +26,7 @@ public class LocadoraController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Locadora>> get() {
+    public ResponseEntity<List<Locadora>> getAll() {
 
         List<Locadora> allLocadora = locadoraService.getAllLocadora();
 

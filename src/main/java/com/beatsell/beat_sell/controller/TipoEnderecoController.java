@@ -26,7 +26,7 @@ public class TipoEnderecoController {
     }
 
     @GetMapping
-    public  ResponseEntity<List<TipoEndereco>> get() {
+    public  ResponseEntity<List<TipoEndereco>> getAll() {
 
         List<TipoEndereco> allTipoEndereco = tipoEnderecoService.getAllTipoEndereco();
 
