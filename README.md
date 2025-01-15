@@ -20,3 +20,9 @@ Bem-vindo à **Locadora Application**! 🎉 Esta é uma aplicação desenvolvida
 - **Hibernate** 🥚
 - **PostgreSQL** 🐘
 - **Maven** 📦
+
+## 🔨 Última funcionalidade implementada
+
+- **Busca todos veículos que estão relacionados a um estacionamento**: Funcionalidade muito importante para usuário visualizar veículos disponíveis
+
+  https://github.com/user-attachments/assets/95f529fa-ca7a-44fa-81ac-ea6558389abf
