@@ -43,7 +43,7 @@ public class Veiculo {
 
     @ManyToOne
     @JoinColumn(name = "estacionamento_id")
-    private Estacionamento estacionamento_id;
+    private Estacionamento estacionamento;
 
     public void setMarca(String marca) {
         this.marca = marca;
@@ -70,6 +70,6 @@ public class Veiculo {
     }
 
     public void setEstacionamento(Estacionamento estacionamentoid) {
-        this.estacionamento_id = estacionamentoid;
+        this.estacionamento = estacionamentoid;
     }
 }

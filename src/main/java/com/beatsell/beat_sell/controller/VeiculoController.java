@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 
 @RestController
@@ -37,5 +38,14 @@ public class VeiculoController {
         List<Veiculo> allVeiculo = veiculoService.getAllVeiculo();
 
         return ResponseEntity.ok(allVeiculo);
+    }
+
+    @GetMapping("/estacionamento")
+    public ResponseEntity<List<Veiculo>> getAllVeiculosInOneEstacionamento(@RequestParam UUID id) {
+
+        List<Veiculo> listVeiculo = veiculoService.getAllVeiculosInOneEstacionamento(id);
+
+        return  ResponseEntity.ok(listVeiculo);
+
     }
 }

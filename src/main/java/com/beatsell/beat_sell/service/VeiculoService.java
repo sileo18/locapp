@@ -6,6 +6,7 @@ import com.beatsell.beat_sell.domain.Veiculo.Veiculo;
 import com.beatsell.beat_sell.domain.Veiculo.VeiculoDTO;
 import com.beatsell.beat_sell.repositories.EstacionamentoRepository;
 import com.beatsell.beat_sell.repositories.VeiculoRepository;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +27,7 @@ public class VeiculoService {
     @Transactional
     public Veiculo create(VeiculoDTO data) {
 
-        Optional<Estacionamento> estacionamento = estacionamentoRepository.findById(UUID.fromString(data.estacionamentoid()));
+        Optional<Estacionamento> estacionamento = estacionamentoRepository.findById(UUID.fromString(data.estacionamento()));
         if (estacionamento.isEmpty()) {
             throw new IllegalArgumentException("Estacionamento não encontrado");
         }
@@ -50,5 +51,17 @@ public class VeiculoService {
         List<Veiculo> allVeiculo = veiculoRepository.findAll();
 
         return  allVeiculo;
+    }
+
+    public List<Veiculo> getAllVeiculosInOneEstacionamento(UUID id) {
+
+        Optional<Estacionamento> estacionamento = estacionamentoRepository.findById(id);
+
+        if (estacionamento.isEmpty()) {
+            throw new EntityNotFoundException("Estacionamento não encontrado para o ID: " + id);
+        }
+
+        return veiculoRepository.findByEstacionamento(estacionamento.get());
+
     }
 }

@@ -55,4 +55,12 @@ public class EstacionamentoService {
 
         return allEstacionamento;
     }
+
+    public Optional<Estacionamento> getEstacionById(UUID id) {
+
+        Optional<Estacionamento> estacionamento = estacionamentoRepository.findById(id);
+
+        return estacionamento;
+
+    }
 }

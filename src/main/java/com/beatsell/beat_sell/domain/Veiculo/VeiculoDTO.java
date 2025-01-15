@@ -10,7 +10,7 @@ public record VeiculoDTO(@NotNull @Size (max = 20)  String marca,
                          String cor,
                          @NotNull Integer tarifa,
                          boolean disponibilidade,
-                         String estacionamentoid
+                         String estacionamento
 
 ) {
 }
