@@ -17,7 +17,6 @@ Bem-vindo à **Locadora Application**! 🎉 Esta é uma aplicação desenvolvida
 
 - **Java 17** ☕
 - **Spring Boot** 🌱
-- **Hibernate** 🥚
 - **PostgreSQL** 🐘
 - **Maven** 📦
 
