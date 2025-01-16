@@ -2,6 +2,7 @@ package com.beatsell.beat_sell.service;
 
 import com.beatsell.beat_sell.controller.EnderecoController;
 import com.beatsell.beat_sell.domain.Endereco.Endereco;
+import com.beatsell.beat_sell.domain.Estacionamento.Estacionamento;
 import com.beatsell.beat_sell.domain.Usuario.Usuario;
 import com.beatsell.beat_sell.domain.Usuario.UsuarioRequestDTO;
 import com.beatsell.beat_sell.repositories.UsuarioRepository;
@@ -10,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class UsuarioService {
@@ -44,4 +47,17 @@ public class UsuarioService {
 
         return allUsuario;
     }
+
+    public void deleteUsuario(UUID id) {
+
+        /*Optional<Usuario> usuario = repository.findById(id);
+
+        if(usuario.isEmpty()) {
+            throw new RuntimeException("Usuário não encontrado com o ID: " + id);
+        }*/
+
+        repository.deleteById(id);
+        return;
+    }
+
 }
