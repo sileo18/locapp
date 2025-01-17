@@ -1,6 +1,7 @@
 package com.beatsell.beat_sell.domain.Veiculo;
 
 import com.beatsell.beat_sell.domain.Estacionamento.Estacionamento;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -43,6 +44,7 @@ public class Veiculo {
 
     @ManyToOne
     @JoinColumn(name = "estacionamento_id")
+    @JsonBackReference
     private Estacionamento estacionamento;
 
     public void setMarca(String marca) {

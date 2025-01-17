@@ -25,11 +25,17 @@ public class EstacionamentoController {
         return ResponseEntity.ok(novoEstacionamento);
     }
 
-    @GetMapping
+    /*@GetMapping
     public ResponseEntity<List<Estacionamento>> getAll() {
 
         List<Estacionamento> allEstacionamento = estacionamentoService.getAllEstacionamento();
 
         return ResponseEntity.ok(allEstacionamento);
+    }*/
+
+    @GetMapping
+    public ResponseEntity<List<Estacionamento>> getAllEstacionamentosWithVeiculos() {
+        List<Estacionamento> estacionamentos = estacionamentoService.getAllEstacionamentoWithVeiculo();
+        return ResponseEntity.ok(estacionamentos);
     }
 }

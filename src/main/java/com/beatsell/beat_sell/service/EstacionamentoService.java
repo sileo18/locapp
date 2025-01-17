@@ -6,6 +6,7 @@ import com.beatsell.beat_sell.domain.Estacionamento.EstacionamentoDTO;
 import com.beatsell.beat_sell.domain.Locadora.Locadora;
 import com.beatsell.beat_sell.domain.Locadora.LocadoraDTO;
 import com.beatsell.beat_sell.domain.TipoEndereco.TipoEndereco;
+import com.beatsell.beat_sell.domain.Veiculo.Veiculo;
 import com.beatsell.beat_sell.repositories.EnderecoRepository;
 import com.beatsell.beat_sell.repositories.EstacionamentoRepository;
 import com.beatsell.beat_sell.repositories.LocadoraRepository;
@@ -61,6 +62,20 @@ public class EstacionamentoService {
         Optional<Estacionamento> estacionamento = estacionamentoRepository.findById(id);
 
         return estacionamento;
+
+    }
+
+    public List<Estacionamento> getAllEstacionamentoWithVeiculo() {
+
+        List<Estacionamento> allEstacionamento = getAllEstacionamento();
+
+        for (Estacionamento estacionamento : allEstacionamento) {
+
+            List<Veiculo> veiculos = estacionamento.getVeiculos();
+            estacionamento.setVeiculos(veiculos);
+        }
+
+        return allEstacionamento;
 
     }
 }
