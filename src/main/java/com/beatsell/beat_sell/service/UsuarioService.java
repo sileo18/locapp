@@ -48,6 +48,14 @@ public class UsuarioService {
         return allUsuario;
     }
 
+    public Optional<Usuario> getUsuarioById(UUID id) {
+
+        Optional<Usuario> usuario = repository.findById(id);
+
+        return usuario;
+
+    }
+
     public void deleteUsuario(UUID id) {
 
         /*Optional<Usuario> usuario = repository.findById(id);
