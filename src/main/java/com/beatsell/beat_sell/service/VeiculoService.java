@@ -64,4 +64,10 @@ public class VeiculoService {
         return veiculoRepository.findByEstacionamento(estacionamento.get());
 
     }
+
+    public void deleteVeiculo(UUID id) {
+
+        veiculoRepository.deleteById(id);
+
+    }
 }

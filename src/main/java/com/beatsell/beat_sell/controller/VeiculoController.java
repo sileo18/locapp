@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.UUID;
 
 
@@ -46,6 +47,19 @@ public class VeiculoController {
         List<Veiculo> listVeiculo = veiculoService.getAllVeiculosInOneEstacionamento(id);
 
         return  ResponseEntity.ok(listVeiculo);
+
+    }
+
+    @DeleteMapping("/veiculo")
+    public ResponseEntity<Void> deleteById(@RequestParam UUID id) {
+
+        try {
+            veiculoService.deleteVeiculo(id);
+            return ResponseEntity.noContent().build();
+        } catch (NoSuchElementException e) {
+            return  ResponseEntity.notFound().build();
+        }
+
 
     }
 }
